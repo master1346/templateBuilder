@@ -4,13 +4,13 @@ public class Person {
     protected final String name;
     protected final String surname;
     protected int age;
-    protected String Address;
+    protected String address;
 
-    public Person(String name, String surname, int age,String Address) {
+    public Person(String name, String surname, int age,String address) {
         this.name = name;
         this.surname = surname;
         this.age = age;
-        this.Address = Address;
+        this.address = address;
     }
 
     public boolean hasAge() {
@@ -34,7 +34,7 @@ public class Person {
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
     public void happyBirthday() {
@@ -47,7 +47,7 @@ public class Person {
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", age=" + age +
-                ", city='" + Address + '\'' +
+                ", city='" + address + '\'' +
                 '}';
     }
 
@@ -59,13 +59,13 @@ public class Person {
         return age == person.age &&
                 name.equals(person.name) &&
                 surname.equals(person.surname) &&
-                Address.equals(person.Address);
+                address.equals(person.address);
     }
 
     public PersonBuilder newChildBuilder() {
         PersonBuilder personBuilder = new PersonBuilder();
         personBuilder.setSurname(this.surname);
-        personBuilder.setAddress(this.Address);
+        personBuilder.setAddress(this.address);
         if(this.getAge() > 16){
             personBuilder.setAge(this.getAge() - 16);
         }else{
